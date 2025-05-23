@@ -29,3 +29,6 @@ project "Glm Maths"
         links "DbgHelp.lib"
 
     ToyboxProjectConfigs()
+
+    local projectDir = os.getcwd()
+    RegisterCorePlugin("%{projectDir}/Include", "Glm Maths")
