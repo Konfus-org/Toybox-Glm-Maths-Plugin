@@ -1,0 +1,3 @@
+[submodule "3rd Party/glm"]
+	path = 3rd Party/glm
+	url = https://github.com/Konfus-org/glm.git
