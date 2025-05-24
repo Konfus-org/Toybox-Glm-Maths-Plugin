@@ -1,6 +1,6 @@
-#include "Tbx/Core/PCH.h"
-#include "Tbx/Core/Math/Quaternion.h"
-#include "Tbx/Core/Math/Trig.h"
+#include "Tbx/Math/PCH.h"
+#include "Tbx/Math/Quaternion.h"
+#include "Tbx/Math/Trig.h"
 #include <glm/fwd.hpp>
 #include <glm/gtx/quaternion.hpp>
 

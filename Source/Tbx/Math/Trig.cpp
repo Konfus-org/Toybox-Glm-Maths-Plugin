@@ -1,5 +1,5 @@
-#include "Tbx/Core/PCH.h"
-#include "Tbx/Core/Math/Trig.h"
+#include "Tbx/Math/PCH.h"
+#include "Tbx/Math/Trig.h"
 #include <glm/glm.hpp>
 
 namespace Tbx::Math

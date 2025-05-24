@@ -1,13 +1,12 @@
 #pragma once
-#include "Tbx/Core/DllExport.h"
-#include "Tbx/Core/Debug/IPrintable.h"
+#include "Tbx/Math/DllExport.h"
 
 namespace Tbx
 {
     /// <summary>
     /// Represents a position, scale, or direction in 3d space. X, Y, Z are stored as euler angles.
     /// </summary>
-    struct EXPORT Vector3 : public IPrintable
+    struct EXPORT Vector3
     {
     public:
         Vector3() = default;
@@ -24,7 +23,7 @@ namespace Tbx
         Vector3& operator *= (const Vector3& other);
         Vector3& operator *= (float other);
 
-        std::string ToString() const override;
+        std::string ToString() const;
 
         /// <summary>
         /// Returns true if the vector is nearly zero in all components
@@ -55,7 +54,7 @@ namespace Tbx
     /// <summary>
     /// Represents a position, scale, or direction in 2d space. X, Y are stored as euler angles.
     /// </summary>
-    struct EXPORT Vector2 : public IPrintable
+    struct EXPORT Vector2
     {
     public:
         Vector2() = default;
@@ -63,7 +62,7 @@ namespace Tbx
         Vector2(float x, float y) : X(x), Y(y) {}
         explicit(false) Vector2(const Vector3& vector) : X(vector.X), Y(vector.Y) {}
 
-        std::string ToString() const override;
+        std::string ToString() const;
 
         float X = 0;
         float Y = 0;
@@ -72,7 +71,7 @@ namespace Tbx
     /// <summary>
     /// Represents a position, scale, or direction in 2d space. X, Y are stored as euler angles.
     /// </summary>
-    struct EXPORT Vector2I : public IPrintable
+    struct EXPORT Vector2I
     {
     public:
         Vector2I() = default;
@@ -80,7 +79,7 @@ namespace Tbx
         explicit(false) Vector2I(const Vector3& vector) : X(static_cast<int>(vector.X)), Y(static_cast<int>(vector.Y)) {}
         Vector2I(int x, int y) : X(x), Y(y) {}
 
-        std::string ToString() const override;
+        std::string ToString() const;
 
         int X = 0;
         int Y = 0;
@@ -91,26 +90,26 @@ namespace Tbx
         /// <summary>
         /// World forward vector. Toybox uses the Left-Handed coordinate system, so [0, 0, 1] is our forward vector.
         /// </summary>
-        static inline Vector3 Forward = { 0, 0, 1 };
+        EXPORT inline Vector3 Forward = { 0, 0, 1 };
         /// <summary>
         /// World backward vector. Toybox uses the Left-Handed coordinate system, so [0, 0, -1] is our backward vector.
         /// </summary>
-        static inline Vector3 Backward = { 0, 0, -1 };
+        EXPORT inline Vector3 Backward = { 0, 0, -1 };
         /// <summary>
         /// World up vector.
         /// </summary>
-        static inline Vector3 Up = { 0, 1, 0 };
+        EXPORT inline Vector3 Up = { 0, 1, 0 };
         /// <summary>
         /// World down vector.
         /// </summary>
-        static inline Vector3 Down = { 0, -1, 0 };
+        EXPORT inline Vector3 Down = { 0, -1, 0 };
         /// <summary>
         /// Toybox uses the Left-Handed coordinate system, so [1, 0, 0] is our left vector.
         /// </summary>
-        static inline Vector3 Left = { 1, 0, 0 };
+        EXPORT inline Vector3 Left = { 1, 0, 0 };
         /// <summary>
         /// Toybox uses the Left-Handed coordinate system, so [-1, 0, 0] is our right vector.
         /// </summary>
-        static inline Vector3 Right = { -1, 0, 0 };
+        EXPORT inline Vector3 Right = { -1, 0, 0 };
     }
 }

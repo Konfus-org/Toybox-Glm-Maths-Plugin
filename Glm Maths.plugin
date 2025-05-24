@@ -1,0 +1,8 @@
+{
+    "name": "Glm Maths",
+    "lib": "Glm Maths.lib",
+    "language": "C++",
+    "version": "0.0.1",
+    "author": "Konfus-dev",
+    "description": "Toybox wrapper around the glm math library."
+}

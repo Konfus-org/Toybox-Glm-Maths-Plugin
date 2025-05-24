@@ -1,7 +1,7 @@
 #pragma once
-#include "Tbx/Core/Math/Constants.h"
-#include "Tbx/Core/DllExport.h"
-#include "Tbx/Core/Math/Quaternion.h"
+#include "Tbx/Math/DllExport.h"
+#include "Tbx/Math/Constants.h"
+#include "Tbx/Math/Quaternion.h"
 
 namespace Tbx
 {
@@ -14,6 +14,8 @@ namespace Tbx
         Transform() = default;
         Transform(const Vector3& position, const Quaternion& rotation, const Vector3& scale)
             : Position(position), Rotation(rotation), Scale(scale) {}
+
+        std::string ToString() const;
 
         Vector3 Position = Constants::Vector3::Zero;
         Quaternion Rotation = Constants::Quaternion::Identity;

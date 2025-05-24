@@ -1,9 +1,9 @@
 #pragma once
-#include "Tbx/Core/DllExport.h"
-#include "Tbx/Core/Math/Vectors.h"
-#include "Tbx/Core/Math/Quaternion.h"
-#include "Tbx/Core/Math/Mat4x4.h"
-#include "Tbx/Core/Math/Bounds.h"
+#include "Tbx/Math/DllExport.h"
+#include "Tbx/Math/Vectors.h"
+#include "Tbx/Math/Quaternion.h"
+#include "Tbx/Math/Mat4x4.h"
+#include "Tbx/Math/Bounds.h"
 
 namespace Tbx::Constants
 {

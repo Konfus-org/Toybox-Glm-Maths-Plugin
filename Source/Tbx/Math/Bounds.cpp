@@ -1,9 +1,11 @@
-#include "Tbx/Core/PCH.h"
-#include "Tbx/Core/Math/Bounds.h"
-#include "Tbx/Core/Math/Trig.h"
+#include "Tbx/Math/PCH.h"
+#include "Tbx/Math/Bounds.h"
+#include "Tbx/Math/Trig.h"
 
 namespace Tbx
 {
+    std::string Bounds::ToString() const { return std::format("[Left: {}, Right: {}, Top: {}, Bottom: {}]", Left, Right, Top, Bottom); }
+
     Bounds Bounds::FromOrthographicProjection(float size, float aspect)
     {
         float halfWidth = (size * aspect);

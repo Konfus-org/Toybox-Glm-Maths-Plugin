@@ -1,7 +1,7 @@
 #pragma once
-#include "Tbx/Core/DllExport.h"
-#include "Tbx/Core/Math/Quaternion.h"
-#include "Tbx/Core/Math/Bounds.h"
+#include "Tbx/Math/DllExport.h"
+#include "Tbx/Math/Quaternion.h"
+#include "Tbx/Math/Bounds.h"
 #include <array>
 #include <string>
 
@@ -11,7 +11,7 @@ namespace Tbx
     /// A 4x4 matrix to store data. Most often used for rendering.
     /// This matrix stores data in column major order.
     /// </summary>
-    struct EXPORT Mat4x4 : public IPrintable
+    struct EXPORT Mat4x4
     {
     public:
         /// <summary>
@@ -54,7 +54,7 @@ namespace Tbx
 
         explicit(false) operator std::array<float, 16>() const { return Values; }
 
-        std::string ToString() const override;
+        std::string ToString() const;
 
         static Mat4x4 FromPosition(const Vector3& position);
         static Mat4x4 FromRotation(const Quaternion& rotation);

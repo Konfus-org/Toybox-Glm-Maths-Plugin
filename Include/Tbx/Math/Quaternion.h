@@ -1,14 +1,13 @@
 ﻿#pragma once
-#include "Tbx/Core/DllExport.h"
-#include "Tbx/Core/Math/Vectors.h"
-#include "Tbx/Core/Debug/IPrintable.h"
+#include "Tbx/Math/DllExport.h"
+#include "Tbx/Math/Vectors.h"
 
 namespace Tbx
 {
     /// <summary>
     /// Represents a rotation. X, Y, Z, W are stored as radians.
     /// </summary>
-    struct EXPORT Quaternion : public IPrintable
+    struct EXPORT Quaternion
     {
     public:
         Quaternion() = default;
@@ -28,7 +27,7 @@ namespace Tbx
         friend Vector3 operator * (const Quaternion& lhs, const Vector3& rhs) { return Multiply(lhs, rhs); }
         friend Vector3 operator * (const Vector3& lhs, const Quaternion& rhs) { return Multiply(lhs, rhs); }
 
-        std::string ToString() const override;
+        std::string ToString() const;
 
         static Quaternion Normalize(const Quaternion& quaternion);
         static Quaternion Add(const Quaternion& lhs, const Quaternion& rhs);

@@ -1,5 +1,5 @@
-#include "Tbx/Core/PCH.h"
-#include "Tbx/Core/Math/Vectors.h"
+#include "Tbx/Math/PCH.h"
+#include "Tbx/Math/Vectors.h"
 #include <glm/glm.hpp>
 
 namespace Tbx

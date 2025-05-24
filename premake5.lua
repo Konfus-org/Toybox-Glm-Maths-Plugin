@@ -5,6 +5,29 @@ project "Glm Maths"
     staticruntime "Off"
     externalwarnings "Off"
 
+    targetdir ("../../" .. OutputTargetDir .. "")
+    objdir    ("../../" .. OutputIntermediateDir .. "")
+
+    pchheader "Tbx/Math/PCH.h"
+    pchsource "Source/Tbx/Math/PCH.cpp" -- Full path MUST be specified relative to the premake5.lua (this) script.
+
+    files
+    {
+        "./Source/**.h",
+        "./Source/**.c",
+        "./Source/**.cc",
+        "./Source/**.hpp",
+        "./Source/**.cpp",
+        "./Include/**.h",
+        "./Include/**.c",
+        "./Include/**.cc",
+        "./Include/**.hpp",
+        "./Include/**.cpp",
+        "./**.plugin",
+        "./**.md",
+        "./*.lua"
+    }
+
     defines
     {
         "TOYBOX",
@@ -21,14 +44,13 @@ project "Glm Maths"
 
     includedirs
     {
-        "./3rd Party/glm"
+        "./Include",
+        "./Source",
+        "%{Using.glm}"
     }
 
-    -- To debug loading shared libs at runtime
-    filter "system:Windows"
-        links "DbgHelp.lib"
-
-    ToyboxProjectConfigs()
+    ToyboxCorePluginConfigs()
 
     local projectDir = os.getcwd()
-    RegisterCorePlugin("%{projectDir}/Include", "Glm Maths")
+    local includePath = path.join(projectDir, "./Include")
+    RegisterCorePlugin(includePath, "Glm Maths")

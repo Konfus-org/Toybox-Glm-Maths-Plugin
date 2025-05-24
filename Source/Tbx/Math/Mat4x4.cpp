@@ -1,8 +1,8 @@
-#include "Tbx/Core/PCH.h"
-#include "Tbx/Core/Math/Constants.h"
-#include "Tbx/Core/Math/Mat4x4.h"
-#include "Tbx/Core/Math/Trig.h"
-#include "Tbx/Core/Math/Int.h"
+#include "Tbx/Math/PCH.h"
+#include "Tbx/Math/Constants.h"
+#include "Tbx/Math/Mat4x4.h"
+#include "Tbx/Math/Trig.h"
+#include "Tbx/Math/Int.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/quaternion.hpp>
