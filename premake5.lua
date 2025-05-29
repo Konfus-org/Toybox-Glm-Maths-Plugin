@@ -3,10 +3,10 @@ project "Glm Maths"
     language "C++"
     cppdialect "C++20"
     staticruntime "Off"
-    externalwarnings "Off"
 
-    targetdir ("../../" .. OutputTargetDir .. "")
-    objdir    ("../../" .. OutputIntermediateDir .. "")
+    local projectDir = os.getcwd()
+    local includePath = path.join(projectDir, "./Include")
+    RegisterStaticPlugin(includePath, "Glm Maths")
 
     pchheader "Tbx/Math/PCH.h"
     pchsource "Source/Tbx/Math/PCH.cpp" -- Full path MUST be specified relative to the premake5.lua (this) script.
@@ -25,9 +25,19 @@ project "Glm Maths"
         "./Include/**.cpp",
         "./**.plugin",
         "./**.md",
-        "./*.lua"
+        "./*.lua",
+        "./*.txt"
     }
-
+    includedirs
+    {
+        "./Include",
+        "./Source",
+        _MAIN_SCRIPT_DIR .. "/Dependencies/glm"
+    }
+    links
+    {
+        "glm"
+    }
     defines
     {
         "TOYBOX",
@@ -36,21 +46,3 @@ project "Glm Maths"
         "GLM_FORCE_LEFT_HANDED",
         "GLM_DEPTH_ZERO_TO_ONE"
     }
-
-    links
-    {
-        "glm"
-    }
-
-    includedirs
-    {
-        "./Include",
-        "./Source",
-        "%{Using.glm}"
-    }
-
-    ToyboxCorePluginConfigs()
-
-    local projectDir = os.getcwd()
-    local includePath = path.join(projectDir, "./Include")
-    RegisterCorePlugin(includePath, "Glm Maths")

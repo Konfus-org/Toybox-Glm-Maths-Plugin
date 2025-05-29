@@ -3,10 +3,6 @@ project "Glm Math Plugin Tests"
     language "C++"
     cppdialect "C++20"
     staticruntime "Off"
-    ignoredefaultlibraries { "MSVCRT" }
-
-    targetdir ("../../../" .. OutputTargetDir .. "")
-    objdir    ("../../../" .. OutputIntermediateDir .. "")
 
     pchheader "PCH.h"
     pchsource "PCH.cpp" -- Full path MUST be specified relative to the premake5.lua (this) script.
@@ -20,7 +16,6 @@ project "Glm Math Plugin Tests"
         "./**.md",
         "./**.lua",
     }
-
     includedirs
     {
         "./",
@@ -30,12 +25,9 @@ project "Glm Math Plugin Tests"
         "%{Using.googlemock}",
         "%{Using.googlemock}/include",
     }
-
     links
     {
         "googletest",
         "googlemock",
         "Glm Maths"
     }
-
-    ToyboxProjectConfigs()
